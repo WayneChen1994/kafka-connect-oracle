@@ -7,6 +7,13 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        tool 'maven3.6.3'
+        sh 'mvn clean package'
+      }
+    }
+
   }
   environment {
     COMPLETED_MSG = 'Build done!'
